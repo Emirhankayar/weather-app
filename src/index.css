@@ -69,25 +69,29 @@ input{
   flex-direction: column;
   justify-content: space-between;
   color: whitesmoke;
-  background-color: rgba(0, 0, 0, 0.20);
+  background-image: url(./assets/main.mp4);
+  background-position: center;
+  background-size: cover;
   align-items: center;
   border-radius: 12px;
 }
+
 .Bg{
   width: 100%;
   height: 100%;
   object-fit: contain;
   position: absolute;
 }
+
 #background{
   width: 100%;
   height: 100%;
   position: absolute;
   object-fit:cover;
-  z-index: -22;
+  z-index: 1;
   border-radius: 12px;
-
 }
+
 .top {
   min-width: 40%;
   min-height: 45%;
@@ -107,6 +111,7 @@ input{
   justify-content: space-evenly;
   border-radius: 12px ;
   background-color: rgba(255, 255, 255, 0.2);
+  z-index: 999;
 
 }
 .feels, .humidity, .wind{

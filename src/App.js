@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import Background from './Background';
 import axios from 'axios';
+import myKey from './config.js';
 
 
 
 function App() {
   const [data,setData] = useState({})
   const [location, setLocation] = useState('')
-  const url=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=74a6f8c4d9b229a377859f342388e680`
+  const url=`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${myKey}`
   const searchLocation = (event) => {
     if (event.key === 'Enter') {
       axios.get(url).then((response) => {
@@ -41,7 +42,7 @@ function App() {
             {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
-      {data.name != undefined &&
+      {data.name !== undefined &&
         <div className="bottom">
           <div className="feels">
             {data.main ? <p className='bold'>{Math.round(data.main.feels_like-273.15)}°C</p> : null}
